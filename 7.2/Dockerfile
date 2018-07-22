@@ -38,6 +38,8 @@ RUN set -xe \
         pdo_mysql \
         mbstring \
         soap \
+    && pecl install redis \
+    && docker-php-ext-enable redis \
     && apk del .build-deps \
     && rm -rf /tmp/* \
     && rm -rf /var/www \
